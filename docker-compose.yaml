@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    container_name: bbn
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    volumes:
+      - ".:/home/bbn"
+    tty: true
