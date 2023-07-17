@@ -3,8 +3,11 @@ An implementation of Batcher Banyan network simulation using python
 
 ## How to run a simulation
 ```bash
-TBD
+$ cd batcher-banyan-network
+$ docker compose up -d --build
+$ docker exec bbn poetry run python src/main.py
 ```
+You can edit src/main.py to change configurations!
 
 ## How to develop
 ```bash

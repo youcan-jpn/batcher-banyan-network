@@ -7,21 +7,28 @@ from components.batcher_network import BatcherNetwork
 
 
 def main():
-    ins = list(range(8))
-    ins[3] = float("INF")
+    N = 5  # input size: 2^N
+    ins = list(range(pow(2, N)))
     random.shuffle(ins)
 
-    print("input: ", ins)
+    # you can change some value to float("INF") here
+    # example:
+    # ins[3] = float("INF")
+
+    print("Input:")
+    print(ins)
     ban = BatcherNetwork(len(ins), ins)
     out1 = ban.transmit()
-    print("Batcher Network output:")
+    print("Batcher Network Output:")
     print(out1)
     out1 = inf2none(data=out1)
+    print("Banyan Network Input:")
+    print(out1)
     byn = BanyanNetwork(data=out1)
     out2 = byn.transmit()
-    print("Banyan Network output:")
+    print("Banyan Network Output:")
     print(out2)
-    print("Decimalized Output")
+    print("Decimalized Output: ")
     print(decimalize(out2))
 
     return
